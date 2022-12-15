@@ -81,3 +81,30 @@ input[type='number'] {
   font-size: 24px;
   font-weight: 600;
 }
+
+
+.btn-light-green {
+    background-color: var(--light-green);
+  }
+  
+  .btn-light-red {
+    background-color: var(--light-red);
+  }
+  
+  /* HEADER */
+  
+  .header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+  }
+  
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logged-in,
+  .logged-out {
+    display: none;
+  }
