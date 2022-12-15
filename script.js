@@ -224,3 +224,49 @@ const createBookCard = (book) => {
   addBookForm.onsubmit = addBook
   window.onkeydown = handleKeyboardInput
   
+
+  // Local Storage
+
+const saveLocal = () => {
+    localStorage.setItem('library', JSON.stringify(library.books))
+  }
+  
+  const restoreLocal = () => {
+    const books = JSON.parse(localStorage.getItem('library'))
+    if (books) {
+      library.books = books.map((book) => JSONToBook(book))
+    } else {
+      library.books = []
+    }
+  }
+  
+  // Auth
+  
+  const auth = firebase.auth()
+  const logInBtn = document.getElementById('logInBtn')
+  const logOutBtn = document.getElementById('logOutBtn')
+  
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      setupRealTimeListener()
+    } else {
+      if (unsubscribe) unsubscribe()
+      restoreLocal()
+      updateBooksGrid()
+    }
+    setupAccountModal(user)
+    setupNavbar(user)
+  })
+  
+  const signIn = () => {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)
+  }
+  
+  const signOut = () => {
+    auth.signOut()
+  }
+  
+  logInBtn.onclick = signIn
+  logOutBtn.onclick = signOut
+  
