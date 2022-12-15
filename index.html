@@ -97,5 +97,30 @@
       <div class="modal" id="accountModal"></div>
      <div class="overlay" id="overlay"></div>
 
+     <!-- Add script -->
+     <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCsh20Wlcv4bIXyZNGfByAbABQH0Ni3zIE",
+        authDomain: "my-library-e07ed.firebaseapp.com",
+        projectId: "my-library-e07ed",
+        storageBucket: "my-library-e07ed.appspot.com",
+        messagingSenderId: "502043414041",
+        appId: "1:502043414041:web:fe6d3026a8e6a5708aa488",
+        measurementId: "G-WQ1HGBDK2L"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
 </body>
 </html>
