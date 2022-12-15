@@ -43,3 +43,41 @@ body {
 }
 
 
+button,
+input {
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type='text'],
+input[type='number'] {
+  cursor: text;
+}
+
+/* UTILS */
+
+.container {
+  max-width: var(--container-width);
+  padding: var(--spacing-lg);
+  margin: 0 auto;
+}
+
+.btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  transition: filter 0.15s ease-in-out;
+}
+
+.btn:hover {
+  filter: brightness(90%);
+}
+
+.btn-add {
+  font-size: 24px;
+  font-weight: 600;
+}
