@@ -191,3 +191,57 @@ input[type='number'] {
     display: flex;
     gap: var(--spacing-md);
   }
+
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    accent-color: white;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overlay.active {
+    display: block;
+  }
+  
+  /* LOADING RING */
+  
+  .lds-dual-ring {
+    display: none;
+    width: 38px;
+    height: 38px;
+  }
+  
+  .lds-dual-ring:after {
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 3px solid var(--black);
+    border-color: var(--black) transparent var(--black) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  
+  .lds-dual-ring.active {
+    display: block;
+  }
+  
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
